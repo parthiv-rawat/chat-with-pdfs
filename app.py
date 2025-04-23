@@ -1,10 +1,11 @@
 import streamlit as st
 import os
+import openai
 from utils.pdf_index import create_or_load_index, save_uploaded_pdfs
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
-# load_dotenv()
+load_dotenv()
 
 st.set_page_config(page_title="Chat with your PDFs", layout="centered")
 st.title("📄 Chat with Your PDFs")
