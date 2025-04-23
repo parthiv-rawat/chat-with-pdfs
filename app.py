@@ -4,6 +4,10 @@ import openai
 from utils.pdf_index import create_or_load_index, save_uploaded_pdfs
 from dotenv import load_dotenv
 
+os.environ["LLAMA_INDEX_CACHE_DIR"] = "/tmp/llama_index_cache"
+os.environ["LLAMA_CI_CACHE_DIR"] = "/tmp/llama_cache"
+os.environ["TIKTOKEN_CACHE_DIR"] = "/tmp/tiktoken_cache"
+
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 load_dotenv()
 
